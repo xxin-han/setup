@@ -1,7 +1,6 @@
 #!/bin/bash
 
 ORANGE='\033[38;5;208m'  
-GREEN='\033[0;32m'
 CYAN='\033[0;36m'
 YELLOW='\033[0;33m'
 RED='\033[0;31m'
@@ -20,16 +19,27 @@ echo -e "${NC}"
 echo -e "${YELLOW}🚀 Welcome to the xXin98 Setup Script!${NC}"
 echo -e "${CYAN}🐦 Follow us on Twitter: https://twitter.com/xxin98${NC}"
 
-
 TWITTER_URL="https://twitter.com/xxin98"
-echo -e "${YELLOW}🔗 Opening Twitter @xxin98 in your browser...${NC}"
+echo -e "${YELLOW}🔗 Attempting to open Twitter @xxin98 in your browser...${NC}"
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-    xdg-open "$TWITTER_URL"
+    if command -v xdg-open >/dev/null 2>&1; then
+        xdg-open "$TWITTER_URL"
+    else
+        echo -e "${RED}⚠️ xdg-open not found. Please open this URL manually: $TWITTER_URL${NC}"
+    fi
 elif [[ "$OSTYPE" == "darwin"* ]]; then
-    open "$TWITTER_URL"
+    if command -v open >/dev/null 2>&1; then
+        open "$TWITTER_URL"
+    else
+        echo -e "${RED}⚠️ open command not found. Please open this URL manually: $TWITTER_URL${NC}"
+    fi
 elif [[ "$OSTYPE" == "cygwin" || "$OSTYPE" == "msys" ]]; then
-    start "$TWITTER_URL"
+    if command -v start >/dev/null 2>&1; then
+        start "$TWITTER_URL"
+    else
+        echo -e "${RED}⚠️ start command not found. Please open this URL manually: $TWITTER_URL${NC}"
+    fi
 else
     echo -e "${RED}⚠️ Unable to open browser automatically. Please open manually: $TWITTER_URL${NC}"
 fi
@@ -38,6 +48,7 @@ echo -e ""
 read -p "$(echo -e ${CYAN}Press [Enter] to continue after viewing the Twitter page...${NC})"
 
 sleep 5
+
 
 #!/bin/bash
 
