@@ -1,12 +1,17 @@
-#!/bin/bash
-
 clear
-echo -e "${GREEN}"
-printf '%*s\n' $(( (80 + 23) / 2 )) "    __  __  _  _    _  _   ___ "
-printf '%*s\n' $(( (80 + 23) / 2 )) "   / / / / | || |  | || | | __|"
-printf '%*s\n' $(( (80 + 23) / 2 )) "  / / / /  | __ | | __ | | _| "
-printf '%*s\n' $(( (80 + 23) / 2 )) " /_/ /_/   |_||_| |_||_| |___|"
+echo -e "${ORANGE}"
+echo -e "$(printf '%*s\n' $(( (80 + 28) / 2 )) ' ')" # Center offset for 28 chars width
+echo -e " __   __  _  _   ___    _   _   _  ___  __ "
+echo -e " \\ \\ / / | || | | __|  | | | | | || __| \\ \\"
+echo -e "  \\ V /  | __ | | _|   | |_| |_| || _|   \\ \\"
+echo -e "   \\_/   |_||_| |___|   \\___/\\___/ |___|  /_/"
+echo -e "                                         "
+echo -e "  _   _   ___   ___ "
+echo -e " | | | | | __| | __|"
+echo -e " | |_| | | _|  | _| "
+echo -e "  \\___/  |___| |___|"
 echo -e "${NC}"
+
 
 
 echo -e "${YELLOW}🚀 Welcome to the xXin98 Setup Script!${NC}"
