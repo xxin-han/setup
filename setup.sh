@@ -1,17 +1,28 @@
-clear
-echo -e "${ORANGE}"
-echo -e "$(printf '%*s\n' $(( (80 + 28) / 2 )) ' ')" # Center offset for 28 chars width
-echo -e " __   __  _  _   ___    _   _   _  ___  __ "
-echo -e " \\ \\ / / | || | | __|  | | | | | || __| \\ \\"
-echo -e "  \\ V /  | __ | | _|   | |_| |_| || _|   \\ \\"
-echo -e "   \\_/   |_||_| |___|   \\___/\\___/ |___|  /_/"
-echo -e "                                         "
-echo -e "  _   _   ___   ___ "
-echo -e " | | | | | __| | __|"
-echo -e " | |_| | | _|  | _| "
-echo -e "  \\___/  |___| |___|"
-echo -e "${NC}"
+#!/bin/bash
 
+ORANGE='\033[38;5;208m'
+GREEN='\033[0;32m'
+CYAN='\033[0;36m'
+YELLOW='\033[0;33m'
+NC='\033[0m'
+
+center_text() {
+  term_width=$(tput cols)
+  text="$1"
+  text_len=${#text}
+  padding=$(( (term_width - text_len) / 2 ))
+  printf "%*s%s\n" $padding "" "$text"
+}
+
+clear
+
+echo -e "${ORANGE}"
+center_text "========================================="
+center_text "           ╔═╗╔═╗╔═╗╦ ╦╔═╗╔═╗              "
+center_text "           ║  ║ ║║  ║ ║╠═╝║╣               "
+center_text "           ╚═╝╚═╝╚═╝╚═╝╩  ╚═╝  xXin98      "
+center_text "========================================="
+echo -e "${NC}"
 
 
 echo -e "${YELLOW}🚀 Welcome to the xXin98 Setup Script!${NC}"
