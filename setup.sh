@@ -17,7 +17,6 @@ center_text() {
 clear
 
 echo -e "${ORANGE}"
-
 echo "                                                                                                         ";
 echo "                                                                                                         ";
 echo "                    XXXXXXX       XXXXXXX  iiii                         999999999          888888888     ";
@@ -44,7 +43,6 @@ echo "                                                                          
 echo "                                                                                                         ";
 echo "                                                                                                         ";
 echo "                                                                                                         ";
-
 echo -e "${NC}"
 
 
